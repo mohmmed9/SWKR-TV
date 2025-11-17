@@ -1,0 +1,143 @@
+/* إعدادات أساسية لنمط نتفلكس الداكن */
+body {
+    background-color: #141414;
+    color: #ffffff;
+    font-family: Arial, sans-serif; /* نتفلكس يستخدم خطاً خاصاً، لكن هذا بديل جيد */
+    margin: 0;
+    padding: 0;
+}
+
+/* 1. الشريط العلوي */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* لتوزيع العناصر على الشريط */
+    align-items: center;
+    padding: 15px 50px;
+    background-color: #141414; /* يمكن جعله شفافاً مع التمرير لاحقاً */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar-brand h1 {
+    color: #e50914; /* لون نتفلكس الأحمر */
+    margin: 0;
+    font-size: 28px;
+}
+
+.nav-links a {
+    color: #e0e0e0;
+    text-decoration: none;
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+}
+
+/* تصميم الأزرار */
+.btn {
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #e50914; /* أحمر */
+    color: white;
+}
+
+.btn-secondary {
+    background-color: rgba(100, 100, 100, 0.7);
+    color: white;
+    margin-left: 10px;
+}
+
+/* 2. العرض المميز (Hero) */
+.hero-section {
+    height: 60vh; /* ارتفاع الشاشة */
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(20,20,20,1) 100%), url('https://via.placeholder.com/1500x500?text=Featured+Image');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+    padding-top: 100px; /* لإعطاء مساحة للشريط العلوي الثابت */
+}
+
+.hero-content {
+    max-width: 500px;
+}
+
+.hero-content h2 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+/* 3. صفوف المحتوى */
+.content-rows {
+    padding: 20px 50px;
+}
+
+.category-row h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.row-posters {
+    display: flex;
+    overflow-x: auto; /* هذا ما يجعل الصف أفقياً وقابلاً للتمرير */
+    overflow-y: hidden;
+    padding-bottom: 20px;
+}
+
+/* لإخفاء شريط التمرير (Scrollbar) في المتصفحات الحديثة */
+.row-posters::-webkit-scrollbar {
+    display: none;
+}
+
+.poster-container {
+    margin-right: 10px;
+    transition: transform 0.2s;
+}
+
+.poster-container img {
+    width: 200px;
+    height: 300px;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.poster-container:hover {
+    transform: scale(1.05); /* تأثير تكبير بسيط عند تمرير الماوس */
+}
+
+/* تصميم خاص بصف "أكمل المشاهدة" */
+.progress-poster {
+    position: relative;
+}
+
+.progress-bar {
+    width: 90%;
+    height: 5px;
+    background-color: #404040; /* لون الشريط الخلفي */
+    position: absolute;
+    bottom: 15px; /* يظهر فوق الملصق قليلاً */
+    left: 5%;
+    border-radius: 5px;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: #e50914; /* لون التقدم (أحمر) */
+    border-radius: 5px;
+}
